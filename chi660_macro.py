@@ -10,10 +10,11 @@ class CHI660e(object):
 		self.arg = arg
 		self.path = os.os.getcwd()    #default file path
 
+	""" initial the lsv parameter"""
 	def init_lsv_tech(self, ):
 		pass
 
-	def function():
+	def run_lsv_tech():
 		pass
 
 	def function():
