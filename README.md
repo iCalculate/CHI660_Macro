@@ -32,6 +32,5 @@ for loop in CycleNum:
 	chi.init_cv_tech(ei=-0.15, eh=-0.25, el=-0.15, v=loop)  #inital cv variables
 	chi.run_cv(file, 'CV-'+str(loop), add_note=True)  #generate the code
 chi.gene_mcr_file(file)     #Build your macro file. Note: it will make seek point to the end
-time_end=time.time()    #Gets the run completion time pointer
 ```
 
