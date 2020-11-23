@@ -147,11 +147,12 @@ class CHI660e(object):
 		
 time_start=time.time()    #Gets the run time pointer
 print("MacroGen run from:"+dt.datetime.now().strftime('%F %T'))
-file=open('output.txt','w+')
+file=open('output.txt','w+')     #creating a read-write text document
 
 chi = CHI660e()    #inital the class variables
 print("Output path is: "+chi.path)
 chi.init_output_txt(file)
+chi.beep(file,3,1)
 
 CycleNum = (0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5)
 for loop in CycleNum:
