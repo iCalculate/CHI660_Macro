@@ -18,7 +18,9 @@ Type in the desired series of commands in the editor box. Each command occupies 
 
 ## 2 About this generator--CHI660e_Macro
 With this generator you can use a few simple functions to generate flexible control scripts that automatically control the instrument for repeated tests and parameter adjustments over long periods of time. The code can generate TXT file and MCR file format at the same time, TXT is easy to edit and modify, MCR format file can be directly read in the editing interface.
+
 Take an electrochemical double layer test as an example：
+
 ```python
 file=open('output.txt','w+')    #creating a read-write text document
 chi = CHI660e()    #inital the class variables
