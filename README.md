@@ -16,6 +16,8 @@ Click this button to execute the macro. The system will verify the commands and 
 
 Type in the desired series of commands in the editor box. Each command occupies  one line. The command is case insensitive. Space will be ignored. If a parameter  is required following the command, a colon ":" or a equal sign "=" is used to  separate the command and parameter. 
 
+![CHI-macro-window](https://pic2.zhimg.com/v2-21baf99afe18cdac6c59cf977294a9ce_r.jpg?source=1940ef5c)
+
 ## 2 About this generator--CHI660e_Macro
 With this generator you can use a few simple functions to generate flexible control scripts that automatically control the instrument for repeated tests and parameter adjustments over long periods of time. The code can generate TXT file and MCR file format at the same time, TXT is easy to edit and modify, MCR format file can be directly read in the editing interface.
 
