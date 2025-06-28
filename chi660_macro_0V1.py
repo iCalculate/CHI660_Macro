@@ -117,7 +117,7 @@ class CHI660e(object):
 	def run_cv(self, file, filename:str='untitled', tsave=True, autosens=True, add_note=False):
 		try:
 			self.cv_ei
-		except NameError:
+		except AttributeError:
 			print("Initialize the variable first. use 'init_cv_tech' function")
 		else:
 			if add_note:
@@ -134,7 +134,7 @@ class CHI660e(object):
 			print("si:"+str(self.cv_si),file=file)
 			print("qt:"+str(self.cv_qt),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
