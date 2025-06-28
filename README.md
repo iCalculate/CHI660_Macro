@@ -1,6 +1,6 @@
 # CHI660_Macro
 
-## 1 Introduction to CHI Electrochemical Workstation Macro
+## Overview
 
 You can find the Macro Command from 'Control->Macro Command'. Use this command to execute a series of other commands. This is analogous to  batch files in Windows or shell scripts in Unix/Linux and is much more flexible than the Repetitive Runs command.
 
@@ -17,8 +17,13 @@ Click this button to execute the macro. The system will verify the commands and 
 Type in the desired series of commands in the editor box. Each command occupies  one line. The command is case insensitive. Space will be ignored. If a parameter  is required following the command, a colon ":" or a equal sign "=" is used to  separate the command and parameter. 
 
 ![CHI-macro-window](https://pic2.zhimg.com/v2-21baf99afe18cdac6c59cf977294a9ce_r.jpg?source=1940ef5c)
+## Features
+- Generate macro text and binary (.mcr) files
+- High level helpers for CV, LSV, SCV, IT, BE and impedance
+- Optional autosens setting for CV and LSV routines
 
-## 2 About this generator--CHI660e_Macro
+
+## Using the CHI660e helper
 With this generator you can use a few simple functions to generate flexible control scripts that automatically control the instrument for repeated tests and parameter adjustments over long periods of time. The code can generate TXT file and MCR file format at the same time, TXT is easy to edit and modify, MCR format file can be directly read in the editing interface.
 
 Take an electrochemical double layer test as an example：
@@ -35,7 +40,7 @@ chi.gene_mcr_file(file)     #Build your macro file. Note: it will make seek poin
 ```
 
 
-## 3 Command line generation
+## Command line usage
 
 A simple CLI `generate_macro.py` is provided to build scripts from a JSON configuration. Create a config file and call the script:
 
@@ -44,3 +49,15 @@ python generate_macro.py --config example_config.json --output my_macro.txt
 ```
 
 This will also produce `output.mcr` which can be loaded directly in the CHI macro editor.
+
+## Example config
+```json
+{
+  "steps": [
+    {"command": "beep", "params": {"times": 2, "interval": 0.5}},
+    {"command": "cv", "filename": "example-cv", "params": {"ei": -0.15, "eh": -0.25, "el": -0.15, "v": 0.01, "cl": 32}},
+    {"command": "lsv", "filename": "example-lsv", "params": {"ei": 0.0, "ef": -0.1, "v": 0.01}}
+  ]
+}
+```
+
