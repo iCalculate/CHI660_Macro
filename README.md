@@ -34,3 +34,13 @@ for loop in CycleNum:
 chi.gene_mcr_file(file)     #Build your macro file. Note: it will make seek point to the end
 ```
 
+
+## 3 Command line generation
+
+A simple CLI `generate_macro.py` is provided to build scripts from a JSON configuration. Create a config file and call the script:
+
+```bash
+python generate_macro.py --config example_config.json --output my_macro.txt
+```
+
+This will also produce `output.mcr` which can be loaded directly in the CHI macro editor.

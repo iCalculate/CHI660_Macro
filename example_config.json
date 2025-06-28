@@ -1,0 +1,7 @@
+{
+  "steps": [
+    {"command": "beep", "params": {"times": 2, "interval": 0.5}},
+    {"command": "cv", "filename": "example-cv", "params": {"ei": -0.15, "eh": -0.25, "el": -0.15, "v": 0.01, "cl": 32}},
+    {"command": "lsv", "filename": "example-lsv", "params": {"ei": 0.0, "ef": -0.1, "v": 0.01}}
+  ]
+}
