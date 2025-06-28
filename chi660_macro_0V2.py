@@ -74,12 +74,12 @@ class CHI660e(object):
 			print("qt:"+str(self.lsv_qt),file=file)
 			print("sens:"+str(self.lsv_sens),file=file)
 			if autosens:
-				print("tsave:IT-"+str(loop),file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
-			print("save:IT-"+str(loop),file=file)
+			print("save:"+filename,file=file)
 			if tsave:
-				print("tsave:IT-"+str(loop),file=file)
+				print("tsave:"+filename,file=file)
 				pass
 			print(" ",file=file)
 		pass
@@ -135,7 +135,7 @@ class CHI660e(object):
 			print("qt:"+str(self.cv_qt),file=file)
 			print("sens:"+str(self.cv_sens),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
@@ -188,7 +188,7 @@ class CHI660e(object):
 			print("sens:"+str(self.scv_sens),file=file)
 			print("qt:"+str(self.scv_qt),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
@@ -233,7 +233,7 @@ class CHI660e(object):
 			print("qt:"+str(self.it_qt),file=file)
 			print("sens:"+str(self.it_sens),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
@@ -261,11 +261,11 @@ class CHI660e(object):
 			pass
 		pass
 
-	def run_be(self, file, filename:str='untbeled', tsave=True, autosens=True, add_note=False):
+	def run_be(self, file, filename:str='untitled', tsave=True, autosens=True, add_note=False):
 		try:
 			self.be_ei
 		except NameError:
-			print("Inbeialize the variable first. use 'inbe_be_tech' function")
+			print("Initialize the variable first. use 'init_be_tech' function")
 		else:
 			if add_note:
 				print("# be at "+str(self.be_ei)+"V with "+str(self.be_si)+"s inter till "+ \
@@ -278,7 +278,7 @@ class CHI660e(object):
 			print("bepe:"+str(self.be_bepe),file=file)
 			print("bept:"+str(self.be_bept),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
@@ -309,11 +309,11 @@ class CHI660e(object):
 			pass
 		pass
 
-	def run_imp(self, file, filename:str='untbeled', tsave=True, autosens=True, add_note=False):
+	def run_imp(self, file, filename:str='untitled', tsave=True, autosens=True, add_note=False):
 		try:
 			self.imp_ei
 		except NameError:
-			print("Inbeialize the variable first. use 'inimp_imp_tech' function")
+			print("Initialize the variable first. use 'init_imp_tech' function")
 		else:
 			if add_note:
 				print("# imp at "+str(self.imp_ei)+"V from "+str(self.imp_fl)+"Hz to "+ \
@@ -327,7 +327,7 @@ class CHI660e(object):
 			print("qt:"+str(self.imp_qt),file=file)
 			print("sens:"+str(self.imp_sens),file=file)
 			if autosens:
-				print("sutosens",file=file)
+				print("autosens",file=file)
 				pass
 			print("run",file=file)
 			print("save:"+filename,file=file)
